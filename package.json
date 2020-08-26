@@ -28,7 +28,7 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -42,5 +42,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.2.0"
+  },
+  "dependencies": {
+    "gulp-connect-php": "^1.0.3"
   }
 }

@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const babel = require('gulp-babel');
+// const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
-const terser = require('gulp-terser');
+// const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -67,7 +67,7 @@ const styles = () =>
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer(), cssnano({colormin:false})]))
     .pipe(
       rename({
         basename: 'styles',
@@ -84,12 +84,12 @@ const scripts = () =>
     .src(paths.scripts.src)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(
-      babel({
-        presets: ['@babel/preset-env']
-      })
-    )
-    .pipe(terser())
+    // .pipe(
+    //   babel({
+    //     presets: ['@babel/preset-env']
+    //   })
+    // )
+    // .pipe(terser())
     .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.scripts.dest));
@@ -100,12 +100,12 @@ const vendors = () =>
     .src(paths.vendors.src)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(
-      babel({
-        presets: ['@babel/preset-env']
-      })
-    )
-    .pipe(terser())
+    // .pipe(
+    //   babel({
+    //     presets: ['@babel/preset-env']
+    //   })
+    // )
+    // .pipe(terser())
     .pipe(concat('vendors.min.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.vendors.dest));

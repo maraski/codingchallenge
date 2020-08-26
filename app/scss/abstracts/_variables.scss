@@ -1,3 +1,12 @@
 // Scss variables (colours etc...)
 
-$primary-colour: #333333;
+$primary-color: #4b4b4b;
+$dark-color: #18181E;
+$coral-color: #D48166;
+
+:root {
+    --topnav-bg-color: hsl(0, 0%, 20%);
+    --topnav-text-color: hsl(0, 0%, 80%);
+    --topnav-text-color-emphasis: white;
+    --topnav-bg-contrast: hsl(0, 0%, 30%);
+}
