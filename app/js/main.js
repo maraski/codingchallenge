@@ -28,9 +28,36 @@ function appendData(data) {
 			let card = document.createElement("div");
 			card.classList.add('item');
 
-			// let rawDate = newsCard.publishedAt;
-			// let formatDate = new Date.(rawDate);
-			// let newsDate = formatDate.getFullYear();
+			let rawDate = newsCard.publishedAt;
+			let formatDate = new Date(rawDate);
+			const year = formatDate.getFullYear();
+			const date = formatDate.getDate();
+			const months = [
+				'January',
+				'February',
+				'March',
+				'April',
+				'May',
+				'June',
+				'July',
+				'August',
+				'September',
+				'October',
+				'November',
+				'December'
+			];
+			const monthName = months[formatDate.getMonth()];
+			const days = [
+				'Sunday',
+				'Monday',
+				'Tuesday',
+				'Wednesday',
+				'Thursday',
+				'Friday',
+				'Saturday'
+			]
+			const dayName = days[formatDate.getDay()];
+			const newsDate = `${dayName}, ${date} ${monthName} ${year}`;
 
 			if (!newsCard.urlToImage) {
 				newsImage = "https://via.placeholder.com/900x500?text=No+Image";
@@ -48,6 +75,7 @@ function appendData(data) {
 				<div style="background-image: url(` + newsImage + `);" class="newsimg">
 				</div></a>
 				<div class="info">
+				<span>` + newsDate + `</span>
 					<a href="` + newsCard.url + `" target="_blank" rel="noopener noreferrer">
 						<h1>` + newsCard.title + `</h1>
 					</a>
