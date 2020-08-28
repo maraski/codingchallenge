@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 // const terser = require('gulp-terser');
+// const uglify = require('gulp-uglifyes');
 const rename = require('gulp-rename');
 const del = require('del');
 const browserSync = require('browser-sync').create();

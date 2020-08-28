@@ -44,6 +44,8 @@
     "gulp-terser": "^1.2.0"
   },
   "dependencies": {
-    "gulp-connect-php": "^1.0.3"
+    "gulp-connect-php": "^1.0.3",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifyes": "^0.2.1"
   }
 }
